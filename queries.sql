@@ -2,12 +2,13 @@
 
 /* How do we define being a top brand? 
 First, let's decide that we want to look at the total number of items purchased per brand */
+
 SELECT 
     brandCode,
     brandName,
     SUM(purchasedItemCount) AS total_purchased_items
 FROM receipts
-WHERE receiptDate >= DATEADD(month, -1, GETDATE())
+WHERE receiptDate >= current_date - interval '1 month'
 GROUP BY brandCode, brandName
 ORDER BY total_purchased_items DESC
 LIMIT 5;
@@ -31,7 +32,7 @@ SELECT
 FROM receipts r
 JOIN items i ON r.receipt_id = i.receipt_id
 JOIN brands b ON i.brandCode = b.brandCode
-WHERE r.dateScanned >= DATEADD(month, -1, GETDATE())
+WHERE r.dateScanned >= current_date - interval '1 month'
 GROUP BY i.brandCode, b.name
 ORDER BY receipts_scanned DESC, total_items_purchased DESC
 LIMIT 5;
@@ -104,7 +105,7 @@ FROM users u
 JOIN receipts r ON u.user_id = r.user_id
 JOIN items i ON r.receipt_id = i.receipt_id
 JOIN brands b ON i.brandCode = b.brandCode
-WHERE u.createdDate >= DATEADD(month, -6, GETDATE())
+WHERE u.createdDate >= current_date - interval '6 months'
 GROUP BY b.name
 ORDER BY total_spend DESC
 LIMIT 1; 
@@ -119,7 +120,7 @@ FROM users u
 JOIN receipts r ON u.user_id = r.user_id
 JOIN items i ON r.receipt_id = i.receipt_id
 JOIN brands b ON i.brandCode = b.brandCode
-WHERE u.createdDate >= DATEADD(month, -6, GETDATE())
+WHERE u.createdDate >= current_date - interval '6 months'
 GROUP BY b.name
 ORDER BY transaction_count DESC
 LIMIT 1; 
