@@ -13,13 +13,15 @@ communicate my understanding of the data and the business context.
 - `brands.json`
 
 ## Data Model
-Using Excalidraw,I first diagrammed a structured relational model to represent the data, as below:
+
+To understand the data and come up with a structured relational model, I first examined the data in the json files using the eda notebook.
+Using Excalidraw,I then diagrammed the relational model to represent the data, as below:
 
 ![Structured Data](assets/structured_data.png)
 
 ## Business Analysis
 
-Using the PostgreSQL dialectI created SQL queries to answer the following questions:
+Using the PostgreSQL dialect, I created SQL queries to answer the following questions:
 - What are the top 5 brands by receipts scanned for most recent month?
 - How does the ranking of the top 5 brands by receipts scanned for the recent month compare to the ranking for the previous month?
 - When considering average spend from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
