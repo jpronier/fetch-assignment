@@ -19,9 +19,11 @@ Using Excalidraw, I then diagrammed the relational model to represent the data, 
 
 ![Structured Data](assets/structured_data.png)
 
+*Note: the users table description is actually "data for each unique user"*
+
 ## Business Analysis
 
-Using the PostgreSQL dialect, I created SQL queries to answer the following questions:
+Using the `PostgreSQL` dialect, I created SQL queries to answer the following questions:
 - What are the top 5 brands by receipts scanned for most recent month?
 - How does the ranking of the top 5 brands by receipts scanned for the recent month compare to the ranking for the previous month?
 - When considering average spend from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
@@ -31,7 +33,11 @@ Using the PostgreSQL dialect, I created SQL queries to answer the following ques
 
 ## Data Quality Checks
 
+For a quick but thorough data quality check, I used the jupyter notebook `quality.ipynb` to identify missing values, duplicates and outliers.
 
+## Communication
+
+The `message.md` file contains a draft of an email I would send to the stakeholders to communicate the data quality issues and the approach I would take to address them.
 
 
 Julie Pronier
