@@ -15,7 +15,7 @@ communicate my understanding of the data and the business context.
 ## Data Model
 
 To understand the data and come up with a structured relational model, I first examined the data in the json files using the eda notebook.
-Using Excalidraw,I then diagrammed the relational model to represent the data, as below:
+Using Excalidraw, I then diagrammed the relational model to represent the data, as below:
 
 ![Structured Data](assets/structured_data.png)
 

@@ -27,7 +27,6 @@ LIMIT 5;
 
 -- How does the ranking of the top 5 brands by receipts scanned for the recent month compare to the ranking for the previous month?
 
-
 WITH current_month AS (
     SELECT 
         i.brandCode,
@@ -101,7 +100,6 @@ ORDER BY total_spend DESC
 LIMIT 1; 
 
 -- Which brand has the most transactions among users who were created within the past 6 months?
-
 
 SELECT 
     b.name AS brand_name,
